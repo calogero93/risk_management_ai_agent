@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "risk-management-ai-agent"
+version = "0.1.0"
+description = "Agente AI per la gestione del rischio finanziario e audit interattivi"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "chromadb",
+    "fpdf2>=2.7",
+    "langchain",
+    "langchain-anthropic",
+    "langchain-community",
+    "langchain-text-splitters",
+    "langgraph",
+    "llama-index-core",
+    "llama-index-readers-file",
+    "matplotlib",
+    "numpy",
+    "pydantic",
+    "pypdf",
+    "rank-bm25",
+    "scikit-learn",
+    "sentence-transformers",
+]
+
+[project.scripts]
+risk-agent = "risk_management_ai_agent.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/risk_management_ai_agent"]
